@@ -20,10 +20,11 @@ def add_challenge():
    emails_out = request.form['emails']
    description_out = request.form['description']
    data = {'duration' : duration_out,'emails' : emails_out,'description': description_out}
-   return jsonify(data)
 
-   #print(duration_out)
-   #print(emails_out)
-   #print(description_out)
-   #return redirect("/")
+
+
+   with open("challenge.json", "a") as outfile:
+        json.dump(data, outfile) 
+
+   return redirect("/")
 
