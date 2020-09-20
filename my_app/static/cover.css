@@ -99,6 +99,11 @@ body {
   }
 }
 
+.mastfoot mt-auto{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
 
 /*
  * Cover
