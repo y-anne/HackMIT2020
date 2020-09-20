@@ -19,11 +19,8 @@ def add_challenge():
    duration_out = request.form['duration']
    emails_out = request.form['emails']
    description_out = request.form['description']
-   data = {'duration' : duration_out,
-            'emails' : emails_out,
-            'description': description_out
-            }
-    return jsonify(data)
+   data = {'duration' : duration_out,'emails' : emails_out,'description': description_out}
+   return jsonify(data)
 
    #print(duration_out)
    #print(emails_out)
