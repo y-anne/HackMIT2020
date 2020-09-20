@@ -36,11 +36,21 @@
     <p class="lead">
       <a href="/create_event" class="btn btn-lg btn-secondary">Create Challenge</a>
     </p>
-  </main>
+    <ul>
+  
+    {% for challenge in list_of_challenges %}
+      {% for key, value in challenge.items() %}
+      <h1>{{ key }}: {{ value }}</h1>
+      {% endfor %}
+    {% endfor %}
 
+
+    </ul>
+  </main>
+        
   <footer class="mastfoot mt-auto">
     <div class="inner">
-     
+      
     </div>
   </footer>
 </div>
