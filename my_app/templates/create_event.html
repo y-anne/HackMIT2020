@@ -25,9 +25,9 @@
     <div class="inner">
       <h3 class="masthead-brand">FRIENDzone</h3>
       <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link active" href="index.html">Home</a>
-        <a class="nav-link" href="create_event.html">Create Challenge</a>
-        <a class="nav-link" href="about_us.html">About Us</a>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link active" href="/create_event">Create Challenge</a>
+        <a class="nav-link" href="/about_us">About Us</a>
       </nav>
     </div>
   </header>
@@ -36,31 +36,34 @@
     <h1 class="cover-heading">Create a Challenge</h1>
     <p class="lead">Create a challenge to compete with your friends</p>
 	
-	<br><br><br>
+  <br><br><br>
+<form action = "/add_challenge" method = "post">
 <div class="form-group">
   <label for="exampleFormControlTextarea3">Enter Duration of Challenge</label>
-  <textarea class="form-control" id="exampleFormControlTextarea3" placeholder= "Enter Duration of Challenge:"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea3" name="duration" placeholder= "Enter Duration of Challenge:"></textarea>
 </div>
+
 <br><br><br><br><br>
 
 	
 	<div class="form-group">
   <label for="exampleFormControlTextarea3">Enter Friend's Emails</label>
-  <textarea class="form-control" id="exampleFormControlTextarea3" rows="5" placeholder= "Enter Friends Emails:"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea3" name="emails" rows="5" placeholder= "Enter Friends Emails:"></textarea>
 </div>
 	<br><br><br><br><br><br>
 
 	<div class="form-group">
   <label for="exampleFormControlTextarea3">Describe Challenge Here</label>
-  <textarea class="form-control" id="exampleFormControlTextarea3" rows="7" placeholder= "Describe Challenge Here:"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea3" name="description" rows="7" placeholder= "Describe Challenge Here:"></textarea>
 </div>
 <br><br><br><br>
 
-
 <div class="btn-group" role="group" aria-label="Basic example">
-	<a href="index.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Submit Challenge</a>
+  <!--<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Submit Challenge</a> -->
+  <button type="submit" class="btn btn-primary">Submit</button>
 	
 </div>
+</form>
 
 	
     <!--need a button?? -->
