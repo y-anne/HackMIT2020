@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <!--Custom CSS -->
@@ -34,14 +34,19 @@
     <h1 class="cover-heading">Welcome to FRIENDzone.</h1>
     <p class="lead">Welcome to the FRIENDzone. Story here</p>
     <p class="lead">
-      <a href="/create_event" class="btn btn-lg btn-secondary">Create Challenge</a>
+      <!--<a href="/create_event" class="btn btn-lg btn-secondary">Create Challenge</a> -->
+      <a href="/create_event" class="ui teal button">Create Challenge</a>
     </p>
     <ul>
   
     {% for challenge in list_of_challenges %}
-      {% for key, value in challenge.items() %}
-      <h1>{{ key }}: {{ value }}</h1>
-      {% endfor %}
+    <!-- <div class="challenge" id = "cha"> -->
+      <div class="ui segment" id = "cha">
+        <h3>{{challenge['duration']}}</h3>
+        <p>{{challenge['emails']}}</p>
+        <p>{{challenge['descriptions']}}</p>
+      </div> 
+    <!-- </div> -->
     {% endfor %}
 
 

@@ -2,12 +2,13 @@ from my_app import app
 from flask import render_template, request, redirect, Flask, jsonify, json
 import requests
 
-list_of_challenges = [{"duration" : "1"}]
+list_of_challenges = []
 file = open("challenge.txt", "a+")
 file.close()
 @app.route("/")
 def index():
     global list_of_challenges
+    list_of_challenges.clear()
     for readLine in open("challenge.txt"):
         tasks = readLine.split(",")
         data = {
