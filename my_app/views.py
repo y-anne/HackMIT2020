@@ -4,7 +4,15 @@ import requests
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    try:
+        filename = "challenge.json"
+        with open(filename) as challenge:
+            data = json.load(challenge)     
+
+    except (ValueError, KeyError, TypeError):
+        return render_template("index.html")
+
+    
 
 @app.route("/about_us")
 def about_us_page():
@@ -20,8 +28,6 @@ def add_challenge():
    emails_out = request.form['emails']
    description_out = request.form['description']
    data = {'duration' : duration_out,'emails' : emails_out,'description': description_out}
-
-
 
    with open("challenge.json", "a") as outfile:
         json.dump(data, outfile) 
