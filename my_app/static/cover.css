@@ -19,6 +19,18 @@ a:hover {
   border: .05rem solid #fff;
 }
 
+#cha{
+  background-color: #008080;
+  
+}
+
+#pop{
+  padding-top: 350px;
+}
+
+#smth{
+  padding-top: 450px;
+}
 
 /*
  * Base structure
@@ -28,6 +40,7 @@ html,
 body {
   height: 100%;
   background-color: #333;
+  
 }
 
 body {
@@ -36,6 +49,7 @@ body {
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+  
 }
 
 .cover-container {
@@ -85,6 +99,11 @@ body {
   }
 }
 
+.mastfoot mt-auto{
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
 
 /*
  * Cover
@@ -97,6 +116,9 @@ body {
   font-weight: 700;
 }
 
+.cover-heading{
+  padding-top: 100px;
+}
 
 /*
  * Footer
@@ -104,3 +126,4 @@ body {
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
+
