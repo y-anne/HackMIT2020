@@ -36,18 +36,17 @@
     <p class="lead">
       <a href="/create_event" class="btn btn-lg btn-secondary">Create Challenge</a>
     </p>
-      {% for challenge in list_of_challenges %}
-        <div id = "challenge" class = "challenges">
-            <!--<div class = "ui segment"> -->
-                <h3>{{challenge["duration"]}}</h3> 
-                <p>{{challenge["emails"]}}</p>
-                <p>{{challenge["descriptions"]}}</p>
-            <!-- </div> -->
-        </div>
-        {% endfor %}
-        {% for challenge in list_of_challenges %}
-          <script> console.log("hello world!") </script>
-        {% endfor %}
+    <ul>
+      {% if config['DEBUG'] %} 
+      
+      <h1>test</h1> 
+      {% endif %} 
+    {% for challenge in list_of_challenges %}
+      <li> {{ challenge }}</li> 
+    {% endfor %}
+
+
+    </ul>
   </main>
         
   <footer class="mastfoot mt-auto">
