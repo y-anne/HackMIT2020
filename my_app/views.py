@@ -8,7 +8,6 @@ file.close()
 @app.route("/")
 def index():
     global list_of_challenges
-    print(list_of_challenges)
     for readLine in open("challenge.txt"):
         tasks = readLine.split(",")
         data = {
