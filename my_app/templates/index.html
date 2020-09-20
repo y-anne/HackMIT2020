@@ -42,9 +42,9 @@
     {% for challenge in list_of_challenges %}
     <!-- <div class="challenge" id = "cha"> -->
       <div class="ui segment" id = "cha">
-        <h3>{{challenge['duration']}}</h3>
-        <p>{{challenge['emails']}}</p>
-        <p>{{challenge['descriptions']}}</p>
+        <h3> Duration: {{challenge['duration']}}</h3>
+        <p> Participants: {{challenge['emails']}}</p>
+        <p> Activity: {{challenge['descriptions']}}</p>
       </div> 
     <!-- </div> -->
     {% endfor %}
