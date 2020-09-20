@@ -3,19 +3,22 @@ from flask import render_template, request, redirect, Flask, jsonify, json
 import requests
 
 list_of_challenges = []
-
+file = open("challenge.txt", "a+")
+file.close()
 @app.route("/")
 def index():
-    try:
-        list_of_challenges.clear()
-        filename = "challenge.json"
-        with open(filename) as challenge:
-            list_of_challenges.append(json.load(challenge)) 
-            print(json.load(challenge))
-            print(list_of_challenges[0])    
-        return render_template("index.html")
-    except (FileNotFoundError):
-        return render_template("index.html")
+    global list_of_challenges
+
+    for readLine in open("challenge.txt"):
+        tasks = readLine.split(",")
+        data = {
+            "duration" : tasks[0],
+            "emails" : tasks[1],
+            "descriptions" : tasks[2]
+        }
+        list_of_challenges.append(data)
+            
+    return render_template("index.html")
 
     
 
@@ -32,10 +35,10 @@ def add_challenge():
    duration_out = request.form['duration']
    emails_out = request.form['emails']
    description_out = request.form['description']
-   data = {'duration' : duration_out,'emails' : emails_out,'description': description_out}
 
-   with open("challenge.json", "a") as outfile:
-        json.dump(data, outfile) 
+   with open("challenge.txt", "a") as outfile:
+        s = duration_out + "," + emails_out + "," + description_out + "\n"
+        outfile.write(s)
 
    return redirect("/")
 
