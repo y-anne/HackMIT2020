@@ -37,12 +37,11 @@
       <a href="/create_event" class="btn btn-lg btn-secondary">Create Challenge</a>
     </p>
     <ul>
-      {% if config['DEBUG'] %} 
-      
-      <h1>test</h1> 
-      {% endif %} 
+  
     {% for challenge in list_of_challenges %}
-      <li> {{ challenge }}</li> 
+      {% for key, value in challenge.items() %}
+      <h1>{{ key }}: {{ value }}</h1>
+      {% endfor %}
     {% endfor %}
 
 
