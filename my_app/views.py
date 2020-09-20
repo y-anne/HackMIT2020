@@ -2,14 +2,19 @@ from my_app import app
 from flask import render_template, request, redirect, Flask, jsonify, json
 import requests
 
+list_of_challenges = []
+
 @app.route("/")
 def index():
     try:
+        list_of_challenges.clear()
         filename = "challenge.json"
         with open(filename) as challenge:
-            data = json.load(challenge)     
-
-    except (ValueError, KeyError, TypeError):
+            list_of_challenges.append(json.load(challenge)) 
+            print(json.load(challenge))
+            print(list_of_challenges[0])    
+        return render_template("index.html")
+    except (FileNotFoundError):
         return render_template("index.html")
 
     
